@@ -67,7 +67,9 @@ RUN set -eux; \
 		xdebug \
 	;
 
+COPY --link . ./
 COPY --link frankenphp/conf.d/20-app.dev.ini $PHP_INI_DIR/app.conf.d/
+RUN rm -Rf frankenphp/
 
 CMD [ "frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile", "--watch" ]
 
