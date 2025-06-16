@@ -1,5 +1,6 @@
 {
   "name": "Symfony + FrankenPHP Dev",
+  "workspaceFolder": "/app",
   "build": {
     "dockerfile": "../Dockerfile",
     "target": "frankenphp_dev",
