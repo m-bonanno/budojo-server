@@ -1,0 +1,28 @@
+{
+  "name": "Symfony + FrankenPHP Dev",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "target": "frankenphp_dev",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [80, 443],
+  "postCreateCommand": "composer install",
+  "remoteUser": "root",
+  "mounts": [
+    "type=volume,source=budojo-var,target=/app/var"
+  ]
+}
