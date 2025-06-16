@@ -24,6 +24,7 @@
   "postCreateCommand": "composer install",
   "remoteUser": "root",
   "mounts": [
-    "type=volume,source=budojo-var,target=/app/var"
+    "type=volume,source=budojo-var,target=/app/var",
+    "type=volume,source=composer-cache,target=/tmp/composer"
   ]
 }
